@@ -1,0 +1,106 @@
+/* Define CSS variables for light mode (default) */
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --container-bg: #fff;
+  --card-bg: #e9f1ff;
+  --card-hover-bg: #d0e4ff;
+  --link-color: #0077ff;
+  --link-hover-color: #005fcc;
+  --box-shadow-light: 0 2px 10px rgb(0 0 0 / 0.1);
+  --box-shadow-card: 0 1px 5px rgb(0 0 0 / 0.1);
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --bg-color: #121521;
+  --text-color: #eee;
+  --container-bg: #222634;
+  --card-bg: #2e344e;
+  --card-hover-bg: #3a4067;
+  --link-color: #66aaff;
+  --link-hover-color: #3399ff;
+  --box-shadow-light: none;
+  --box-shadow-card: none;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h4 {
+  margin-bottom: 12px;
+}
+
+/* Main container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--container-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--box-shadow-light);
+  overflow: visible;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Current weather styles */
+.current-weather {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.current-weather img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Forecast grid layout */
+.forecast-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Forecast card */
+.forecast-card {
+  background: var(--card-bg);
+  border-radius: 6px;
+  padding: 15px;
+  flex: 1 1 100px;
+  max-width: 110px;
+  text-align: center;
+  box-shadow: var(--box-shadow-card);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.forecast-card:hover {
+  background-color: var(--card-hover-bg);
+}
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+}
+
+/* Back link styling */
+.back-link {
+  margin-top: 20px;
+  display: inline-block;
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--link-hover-color);
+}
